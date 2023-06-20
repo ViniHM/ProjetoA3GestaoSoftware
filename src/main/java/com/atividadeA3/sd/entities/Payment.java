@@ -12,8 +12,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.MapsId;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "tb_payment")
 public class Payment implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -35,30 +39,6 @@ public class Payment implements Serializable {
 		super();
 		this.id = id;
 		this.moment = moment;
-		this.order = order;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public Instant getMoment() {
-		return moment;
-	}
-
-	public void setMoment(Instant moment) {
-		this.moment = moment;
-	}
-
-	public Order getOrder() {
-		return order;
-	}
-
-	public void setOrder(Order order) {
 		this.order = order;
 	}
 
